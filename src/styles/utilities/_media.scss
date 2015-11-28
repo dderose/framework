@@ -1,7 +1,7 @@
 /* Create breakpoint utility classes for showing and hiding elements */
 @mixin media-setup($namespace: "") {
-	.#{$namespace}u-animated {
-        transition: all .4s cubic-bezier(1, 0, .5, 1);
+	.#{$namespace}u-defaultTransition {
+        transition: brand-transition;
 	}
 }
 

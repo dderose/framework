@@ -58,42 +58,22 @@
     .#{$namespace}u-textSizeBase {
         font-size: rem($base-font-size) !important;
     }
-    .#{$namespace}u-textSizeMouseType {
-        font-size: rem($micro-size) !important;
-    }
-    .#{$namespace}u-textSizeTiny {
-        font-size: rem($milli-size) !important;
-    }
-    .#{$namespace}u-textSizeSmall {
-        font-size: rem($centi-size) !important;
-    }
-    .#{$namespace}u-textSizeLarge {
-        font-size: rem($kilo-size) !important;
-        font-weight: 400;
-    }
-    .#{$namespace}u-textSizeHuge {
-        font-size: rem($mega-size) !important;
-        font-weight: 300;
-    }
 
-    .#{$namespace}u-fontLight {
-        font-family: $light-font-family !important;
-    }
-
-
-    // New font size classes. Remove old ones once we've updated all references.
     .#{$namespace}u-tera {
         font-size: rem($tera-size) !important;
         font-weight: 300 !important;
     }
+    
     .#{$namespace}u-giga {
         font-weight: 300 !important;
         font-size: rem($giga-size) !important;
     }
+    
     .#{$namespace}u-mega {
         font-size: rem($mega-size) !important;
         font-weight: 400 !important;
     }
+    
     .#{$namespace}u-kilo {
         font-size: rem($kilo-size) !important;
         font-weight: 400 !important;
@@ -104,31 +84,27 @@
         font-size: rem($h1-size) !important;
         font-weight: 400 !important;
     }
-    .#{$namespace}u-secondaryHeadlineText {
-        font-family: $secondary-headline-font-family !important;
-        font-size: rem($h3-size) !important;
-        font-weight: 400 !important;
-    }
+
     .#{$namespace}u-titleText {
         font-size: rem($h2-size) !important;
         font-weight: 500 !important;
     }
+    
     .#{$namespace}u-subheadText {
         font-size: rem($h3-size) !important;
     }
+    
     .#{$namespace}u-bodyText {
         font-size: rem($base-font-size) !important;
     }
+
     .#{$namespace}u-captionText {
-        font-size: rem($micro-size) !important;
-    }
-    .#{$namespace}u-headlineLetterSpacing {
-        letter-spacing: rem(1.2) !important;
-    }
-    .#{$namespace}u-letterSpacing {
-        letter-spacing: rem(3) !important;
+        font-size: rem($milli-size) !important;
     }
 
+    .#{$namespace}u-fineText {
+        font-size: rem($micro-size) !important;
+    }
 }
 
 @include textSize-setup();
@@ -290,18 +266,18 @@
 
 // Font Family
 
-.u-lightFont, .u-weightLight {
+.u-weightLight {
     font-family: $light-font-family;
 }
 
 // Font Weight
-.u-regularFont, .u-weightNormal {
+.u-weightNormal {
     font-weight: 400 !important;
     font-family: $base-font-family;
 }
 
 .u-weightSemiBold {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     font-family: $secondary-headline-font-family;
 }
 
@@ -394,9 +370,4 @@
             text-decoration: underline !important;
         }
     }
-}
-
-.u-placeholderText:empty:before {
-  content: attr(data-placeholder);
-  color: gray;
 }

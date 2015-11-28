@@ -154,26 +154,3 @@
 @media only screen and (min-width:$breakpoint5) {
     @include width-setup("b5-");
 }
-
-// TODO: These add a bunch of weight to the final css file which is why I didn't just give everything all possible breakpoint classes. Only add these if you need them.
-// max
-
-@media only screen and (max-width:$breakpoint1) {
-    @include width-setup("b1Max-");
-}
-
-@media only screen and (max-width:$breakpoint2) {
-    @include width-setup("b2Max-");
-}
-
-@media only screen and (max-width:$breakpoint3) {
-    @include width-setup("b3Max-");
-}
-
-@media only screen and (max-width:$breakpoint4) {
-    @include width-setup("b4Max-");
-}
-
-@media only screen and (max-width:$breakpoint5) {
-    @include width-setup("b5Max-");
-}

@@ -1,11 +1,11 @@
 var gulp = require('gulp');
-var plumber = require('gulp-plumber');
+var plugins = require('gulp-load-plugins')();
 var connect = require('gulp-connect');
 
 gulp.task('connect', function() {
-    connect.server({
-        port: 9000,
-        root: 'src/styleguide',
+    plugins.connect.server({
+        port: 9001,
+        root: '../src/styleguide',
         livereload: true
     });
 });

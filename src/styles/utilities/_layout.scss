@@ -1,4 +1,3 @@
-
 .u-centerBlock  {
     margin: 0 auto !important;
 }
@@ -19,9 +18,9 @@
     }
 
 /**
- * Vertical alignment utilities
- * Depends on an appropriate `display` value.
- */
+* Vertical alignment utilities
+* Depends on an appropriate `display` value.
+*/
 
 .u-valignTop {
     vertical-align: top !important;
@@ -40,36 +39,18 @@
 }
 
 /**
- * Fixed alignment utilities
- * Depends on an appropriate `position` value.
- */
-
-.u-fixedTop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.u-fixedBottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-/**
- * Contain floats
- *
- * Make an element expand to contain floated children.
- * Uses pseudo-elements (micro clearfix).
- *
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of the
- *    element.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
+* Contain floats
+*
+* Make an element expand to contain floated children.
+* Uses pseudo-elements (micro clearfix).
+*
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of the
+*    element.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
 
 .u-clearfix:before,
 .u-clearfix:after {
@@ -82,8 +63,8 @@
 }
 
 /**
- * Floats
- */
+* Floats
+*/
 
 @mixin float-setup($namespace: "") {
     .#{$namespace}u-floatRight   { float: right !important; }
@@ -115,15 +96,15 @@
 
 
 /**
- * Border-collapse
- */
+* Border-collapse
+*/
 
  .u-borderCollapse { border-collapse: collapse; }
  .u-borderSeparate { border-collapse: separate; }
 
- /**
- * Table-layout
- */
+/**
+* Overflow
+*/
 
 .u-overflowHidden {
     overflow: hidden !important;
@@ -137,6 +118,9 @@
     overflow: scroll !important;
 }
 
+/**
+* Orientation
+**/
 .u-flip {
     @include transform('rotate(180deg)');
 }

@@ -10,7 +10,7 @@
 
 .u-divider--vertical {
 	width: 1px;
-	margin: 0 rem(16);
+	margin: 0 rem($base-spacing-unit);
 	border: 0;
     border-right: 1px solid $brdrColorDark;
 }

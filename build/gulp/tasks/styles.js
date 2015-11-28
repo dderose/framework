@@ -1,15 +1,18 @@
 var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var sourcemaps = require('gulp-sourcemaps');
+var mainBowerFiles = require('main-bower-files');
+// Include plugins
+var plugins = require('gulp-load-plugins')({
+	pattern: ['gulp-*', 'gulp.*', 'main-bower-files'],
+	replaceString: /\bgulp[\-.]/
+});
 var config = require('../config.js').sass;
 
 gulp.task('styles', function() {
-  gulp.src(config.src)
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(sass(config.settings))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(config.dest))
+	gulp.src(mainBowerFiles().concat(config.src))
+		.pipe(plugins.plumber())
+		.pipe(plugins.filter('*.css'))
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass(config.settings))
+		.pipe(plugins.sourcemaps.write('./'))
+		.pipe(gulp.dest(config.dest))
 });

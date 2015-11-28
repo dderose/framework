@@ -1,7 +1,6 @@
 var base = '../';
 var dest = base + 'static';
 var src = base + 'src';
-var gutil = require('gulp-util');
 
 module.exports = {
   sass: {
@@ -18,10 +17,6 @@ module.exports = {
     src: [
       src + '/js/**/*.js'
     ],
-    dest: dest + '/js'
-  },
-  vendor: {
-    src: dest + '/vendor/js/**/*.js',
     dest: dest + '/js'
   },
   jshint: {
