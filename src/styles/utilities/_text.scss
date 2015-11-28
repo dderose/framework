@@ -1,0 +1,402 @@
+// Utilities
+// 
+// Utitlies are used to nudge an element in cases where a full component is not needed. This is commonly used to add margin and padding to an element, change the font size, add a divider, etc.
+// 
+// <a href="#2.1">Text Utilities</a> |
+// <a href="#2.2">Spacing</a>
+//
+// Styleguide 2.0.0
+
+// Text utlities
+// 
+// Text sizes scale automatically with the size of the browser window. As such, all sizes given below are relative.
+// 
+// Styleguide 2.1.0
+
+// Text Sizes
+// 
+// Text sizes scale automatically with the size of the browser window. As such, all sizes given below are relative.
+// 
+// <table class="Table Table--border Table--striped">
+//   <thead class="Table-head">
+//     <tr>
+//       <th>Class Name</th>
+//       <th>Description</th>
+//     </tr>
+//   <thead>
+//   <tbody>
+//     <tr>
+//       <td>u-textSizeMouseType</td>
+//       <td class="u-textSizeMouseType">The smallest font size. USed for text that is supplmental or otherwise not very important.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textSizeTiny</td>
+//       <td class="u-textSizeTiny">A fairly small text size.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textSizeSmall</td>
+//       <td class="u-textSizeSmall">A slighty small text size.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textSizeBase</td>
+//       <td class="u-textSizeBase">The base font size that all normal text defaults to.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textSizeLarge</td>
+//       <td class="u-textSizeLarge">A slighty large text size.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textSizeHuge</td>
+//       <td class="u-textSizeHuge">A very large text size.</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// Styleguide 2.1.1
+
+@mixin textSize-setup($namespace: "") {
+    .#{$namespace}u-textSizeBase {
+        font-size: rem($base-font-size) !important;
+    }
+    .#{$namespace}u-textSizeMouseType {
+        font-size: rem($micro-size) !important;
+    }
+    .#{$namespace}u-textSizeTiny {
+        font-size: rem($milli-size) !important;
+    }
+    .#{$namespace}u-textSizeSmall {
+        font-size: rem($centi-size) !important;
+    }
+    .#{$namespace}u-textSizeLarge {
+        font-size: rem($kilo-size) !important;
+        font-weight: 400;
+    }
+    .#{$namespace}u-textSizeHuge {
+        font-size: rem($mega-size) !important;
+        font-weight: 300;
+    }
+
+    .#{$namespace}u-fontLight {
+        font-family: $light-font-family !important;
+    }
+
+
+    // New font size classes. Remove old ones once we've updated all references.
+    .#{$namespace}u-tera {
+        font-size: rem($tera-size) !important;
+        font-weight: 300 !important;
+    }
+    .#{$namespace}u-giga {
+        font-weight: 300 !important;
+        font-size: rem($giga-size) !important;
+    }
+    .#{$namespace}u-mega {
+        font-size: rem($mega-size) !important;
+        font-weight: 400 !important;
+    }
+    .#{$namespace}u-kilo {
+        font-size: rem($kilo-size) !important;
+        font-weight: 400 !important;
+    }
+
+    .#{$namespace}u-headlineText {
+        font-family: $headline-font-family !important;
+        font-size: rem($h1-size) !important;
+        font-weight: 400 !important;
+    }
+    .#{$namespace}u-secondaryHeadlineText {
+        font-family: $secondary-headline-font-family !important;
+        font-size: rem($h3-size) !important;
+        font-weight: 400 !important;
+    }
+    .#{$namespace}u-titleText {
+        font-size: rem($h2-size) !important;
+        font-weight: 500 !important;
+    }
+    .#{$namespace}u-subheadText {
+        font-size: rem($h3-size) !important;
+    }
+    .#{$namespace}u-bodyText {
+        font-size: rem($base-font-size) !important;
+    }
+    .#{$namespace}u-captionText {
+        font-size: rem($micro-size) !important;
+    }
+    .#{$namespace}u-headlineLetterSpacing {
+        letter-spacing: rem(1.2) !important;
+    }
+    .#{$namespace}u-letterSpacing {
+        letter-spacing: rem(3) !important;
+    }
+
+}
+
+@include textSize-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include textSize-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include textSize-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include textSize-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include textSize-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include textSize-setup("b5-");
+}
+
+// Text alignment
+// 
+// Easily align text with these utilties.
+// 
+// <table class="Table Table--border Table--striped">
+//   <thead class="Table-head">
+//     <tr>
+//       <th>Class Name</th>
+//       <th>Description</th>
+//     </tr>
+//   <thead>
+//   <tbody>
+//     <tr>
+//       <td>u-textCenter</td>
+//       <td class="u-textCenter">Align text in the center of its containing element.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textLeft</td>
+//       <td class="u-textLeft">Align text to the left of its containing element</td>
+//     </tr>
+//     <tr>
+//       <td>u-textRight</td>
+//       <td class="u-textRight">Align text to the right of its containing element</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// Styleguide 2.1.2
+
+// Text alignment
+@mixin textAlign-setup($namespace: "") {
+    .#{$namespace}u-textCenter {
+        text-align: center !important;
+    }
+
+    .#{$namespace}u-textLeft {
+        text-align: left !important;
+    }
+
+    .#{$namespace}u-textRight {
+        text-align: right !important;
+    }
+
+    .#{$namespace}u-textJustify {
+        text-align: justify !important;
+    }
+}
+
+@include textAlign-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include textAlign-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include textAlign-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include textAlign-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include textAlign-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include textAlign-setup("b5-");
+}
+
+// Text decoration
+// 
+// These utility classes allow you to add decorations to text such as bolding or capitalizing text.
+// 
+// <table class="Table Table--border Table--striped">
+//   <thead class="Table-head">
+//     <tr>
+//       <th>Class Name</th>
+//       <th>Description</th>
+//     </tr>
+//   <thead>
+//   <tbody>
+//     <tr>
+//       <td>u-weightNormal</td>
+//       <td class="u-weightNormal">Remove bold from text.</td>
+//     </tr>
+//     <tr>
+//       <td>u-weightSemiBold</td>
+//       <td class="u-weightSemiBold">Make text slightly bold.</td>
+//     </tr>
+//     <tr>
+//       <td>u-weightBold</td>
+//       <td class="u-weightBold">Make text fully bold.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textUnderline</td>
+//       <td class="u-textUnderline">Underline text.</td>
+//     </tr>
+//     <tr>
+//       <td>u-caps</td>
+//       <td class="u-caps">Convert text to all caps.</td>
+//     </tr>
+//     <tr>
+//       <td>u-smallCaps</td>
+//       <td class="u-smallCaps">Convert text to small caps.</td>
+//     </tr>
+//     <tr>
+//       <td>u-camelCase</td>
+//       <td class="u-camelCase">Capitalize the first letter of each word.</td>
+//     </tr>
+//     <tr>
+//       <td>u-muted</td>
+//       <td class="u-muted">Make text less noticeable.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textBreak</td>
+//       <td class="u-textBreak">WrapAVeryLongStringSoThatItBreaksIfItIsLongerThanItsParentElementAndINeedToMakeThisVeryLongToIllustrate.</td>
+//     </tr>
+//     <tr>
+//       <td>u-wordBreak</td>
+//       <td class="u-textBreak">Similar to u-textBreak but it only breaks on words, not letters.</td>
+//     </tr>
+//     <tr>
+//       <td>u-textNoWrap</td>
+//       <td><div class="u-textNoWrap u-border" style="max-width:200px;">Don't break text if it is longer than its parent.</div></td>
+//     </tr>
+//     <tr>
+//       <td>u-cursorHand</td>
+//       <td class="u-cursorHand">Turn the cursor into a link indicator when over the element.</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// Styleguide 2.1.3
+
+// Font Family
+
+.u-lightFont, .u-weightLight {
+    font-family: $light-font-family;
+}
+
+// Font Weight
+.u-regularFont, .u-weightNormal {
+    font-weight: 400 !important;
+    font-family: $base-font-family;
+}
+
+.u-weightSemiBold {
+    font-weight: 600 !important;
+    font-family: $secondary-headline-font-family;
+}
+
+.u-weightBold {
+    font-weight: 700 !important;
+    font-family: $secondary-headline-font-family;
+}
+
+// Text Decoration
+.u-textUnderline {
+    text-decoration: underline !important;
+}
+
+// Capitalization
+.u-caps {
+    text-transform: uppercase !important;
+}
+
+.u-smallCaps {
+    font-variant: small-caps !important;
+}
+
+.u-camelCase {
+    text-transform: capitalize !important;
+}
+
+.u-textTransformNone {
+    text-transform: none !important;
+}
+
+.u-textDecorationNone {
+    text-decoration: none !important;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+
+.u-muted {
+    opacity: .3 !important;
+    filter: alpha(opacity = 30) !important;
+}
+
+// Line Height
+.u-lineHeight1 {
+    line-height: 1 !important;
+}
+
+// Line Height
+.u-lineHeightBase {
+    line-height: $line-height-ratio !important;
+}
+
+// Word and Line Breaking
+.u-wordBreak {
+    word-wrap: break-word !important;
+}
+
+.u-overflowWrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.u-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Word and Line Breaking
+.u-textBreak {
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+}
+
+.u-textNoWrap {
+    white-space: nowrap !important;
+}
+
+// Cursor States
+.u-cursorHand {
+    cursor: pointer !important;
+}
+
+.u-linkComplex {
+    text-decoration: none !important;
+    
+    &:hover {
+        span {
+            text-decoration: underline !important;
+        }
+    }
+}
+
+.u-placeholderText:empty:before {
+  content: attr(data-placeholder);
+  color: gray;
+}

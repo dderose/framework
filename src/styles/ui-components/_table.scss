@@ -1,0 +1,200 @@
+// Tables
+//
+// The base CTCT Table style adds cell spacing and left aligns &lt;th> elements in the &lt;thead>. Add the class <em>Table</em> to activate these styles.
+//
+// Markup: <table class="Table {$modifiers}">
+//   <thead>
+//     <tr>
+//       <th>Name</th>
+//       <th>Company</th>
+//       <th>Email</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//        <td>Dan DeRose</td>
+//        <td>Crayon</td>
+//        <td>dan.derose@crayon.co</td>
+//     </tr>
+//     <tr>
+//        <td>Jonah Lopin</td>
+//        <td>Crayon</td>
+//        <td>jonah@crayon.co</td>
+//     </tr>
+//     <tr>
+//        <td>John Osborne</td>
+//        <td>Crayon</td>
+//        <td>john@crayon.co</td>
+//     </tr>
+//     <tr>
+//        <td>Matt Therrien</td>
+//        <td>Crayon</td>
+//        <td>matt@crayon.co</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// .Table--border - Add a border around the entire table
+// .Table--cellBorders - Add borders around all cells
+// .Table--bodyBorder - Add borders around cells in the &lt;tbody>
+// .Table--striped - Alternating colored rows
+//
+// Styleguide 6.0
+
+.Table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: separate;
+    border-radius: rem($brand-round);
+
+    th {
+        text-align: left;
+        font-weight: 600;
+    }
+
+    tr {
+        > th,
+        > td {
+            padding: rem($half-spacing-unit);
+        }
+    }
+}
+    .Table--striped {
+        > tbody {
+            > tr:nth-child(even) {
+                background-color: $bgColorLight;
+            }
+        }
+    }
+
+    .Table--border {
+        border: 1px solid $brdrColor;
+    }
+
+    .Table--cellBorders {
+        border-spacing: 1px;
+        background-color: $brdrColor;
+
+        tr {
+            background-color: #fff;
+        }
+
+        th:first-child {
+            border-radius: rem(4) 0 0;
+        }
+
+        th:last-child {
+            border-radius: 0 rem(4) 0 0;
+        }
+
+        tbody {
+            > tr:last-child {
+                > td:first-child {
+                    border-radius: 0 0 0 rem(4);
+                }
+
+                > td:last-child {
+                    border-radius: 0 0 rem(4);
+                }
+            }
+        }
+    }
+
+    .Table--bodyBorder {
+        > tbody {
+            > tr {
+                > td {
+                    border-top: 1px solid $brdrColorDark;
+                    border-left: 1px solid $brdrColorDark;
+
+                    &:last-child {
+                        border-right: 1px solid $brdrColorDark;
+                    }
+                }
+
+                &:first-child {
+                    > td {
+
+                        &:first-child {
+                            border-radius: rem(4) 0 0;
+                        }
+
+                        &:last-child {
+                            border-radius: 0 rem(4) 0 0;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    > td {
+                        border-bottom: 1px solid $brdrColorDark;
+
+                        &:first-child {
+                            border-radius: 0 0 0 rem(4);
+                        }
+
+                        &:last-child {
+                            border-radius: 0 0 rem(4);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Table-head {
+        background-color: $colorSecondary1;
+
+        > tr {
+            background-color: $colorSecondary1;
+
+            > th {
+                color: #fff;
+            }
+        }
+
+        .is-sortable {
+            background-color: $bgColorLight;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+// thead Styles
+//
+// The table head (&lt;thead>) can be styled separately through the use of the <em>Table-head</em> class.
+//
+// Markup:
+// <table class="Table">
+//   <thead class="Table-head">
+//     <tr>
+//       <th>Name</th>
+//       <th>Company</th>
+//       <th>Email</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//        <td>Dan DeRose</td>
+//        <td>Crayon</td>
+//        <td>dan.derose@crayon.co</td>
+//     </tr>
+//     <tr>
+//        <td>Jonah Lopin</td>
+//        <td>Crayon</td>
+//        <td>jonah@crayon.co</td>
+//     </tr>
+//     <tr>
+//        <td>John Osborne</td>
+//        <td>Crayon</td>
+//        <td>john@crayon.co</td>
+//     </tr>
+//     <tr>
+//        <td>Matt Therrien</td>
+//        <td>Crayon</td>
+//        <td>matt@crayon.co</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// Styleguide 6.1

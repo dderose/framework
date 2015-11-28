@@ -1,0 +1,204 @@
+// Typography
+//
+// The base typography establishes base font family, font sizes, font colors, scale, and vertical rhythm/tempo.
+//
+// The typographic scale used is the <em>traditional</em> scale. See http://lamb.cc/typograph/ for more information on scale and vertical rhythm/tempo.
+//
+// Additionally, we use a mixin to calculate font-size that also calculates the appropriate line-height and margin-bottom to maintain the vertical rhythm/tempo. See http://twitter.com/redclov3r/status/250301539321798657.
+
+// These values are the minimum and maximum viewport sizes to apply the font scaling
+$min_width: 30;
+$max_width: 80;
+// These values represent the range of font-size to apply  
+// These values effect the base font-size, headings and other elements will scale proportionally
+$min_font: 1;
+$max_font: 1.2; 
+
+:root { font-size: #{$min_font}rem; }
+
+@media (min-width: #{$min_width}rem) and (max-width: #{$max_width}rem){
+  :root { 
+    font-size: calc(#{$min_font}rem + (#{$max_font} - #{$min_font}) * ((100vw - #{$min_width}rem) / (#{$max_width} - #{$min_width})));
+  }
+}
+@media (min-width: #{$max_width}rem){
+   :root { 
+     font-size: #{$max_font}rem;
+   }
+}
+
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html {
+    font: rem($base-font-size) $base-font-family;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+
+body {
+	line-height: $line-height-ratio;
+	color: $base-font-color;
+}
+
+// Base link styling
+a {
+    font-family: $secondary-headline-font-family;
+    text-decoration: none;
+    color: $link-color;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Base margin spacing between elements
+//
+// Where `margin-bottom` is concerned, this value will be the same as the
+// base line-height. This allows us to keep a consistent vertical rhythm.
+// As per: csswizardry.com/2012/06/single-direction-margin-declarations
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+table,
+legend,
+fieldset,
+figure,
+pre {
+    margin-bottom: ($base-font-size / $base-line-height) * 1rem;
+    // margin-bottom: ceil($base-font-size / $base-line-height) * 1vh; // viewport units are bugged in iOS7
+}
+
+p + h1,
+p + h2,
+p + h3 {
+  margin-top: rem($base-spacing-unit);
+}
+
+// Sizing for each of the native heading elements
+h1 {
+  @include font-size($h1-size);
+  font-weight: 600;
+}
+
+h2 {
+	@include font-size($h2-size);
+  font-weight: 500;
+}
+
+h3 {
+	@include font-size($h3-size);
+  font-weight: 500;
+}
+
+h4 {
+	@include font-size($h4-size);
+  font-weight: 500;
+}
+
+h5 {
+	@include font-size($h5-size);
+  font-weight: 500;
+}
+
+h6 {
+	@include font-size($h6-size);
+  font-weight: 500;
+}
+
+// Default list style and nesting.
+ul,
+ol {
+    margin: 0 0 rem($half-spacing-unit);
+    padding: 0;
+    font-size: rem($base-font-size);
+
+    ul {
+      width: 100%;
+      margin: rem($half-spacing-unit) 0 0;
+    }
+}
+  li {
+      position: relative;
+      margin: 0 0 rem($half-spacing-unit) rem($base-spacing-unit * 1.25);
+      line-height: 1.25;
+    }
+
+ol {
+  margin-left: rem(32);
+
+  li {
+    padding-left: 0;
+  }
+
+  ol {
+    margin: rem($half-spacing-unit) 0 rem(-$half-spacing-unit) rem(32);
+  }
+}
+
+// Inline Quotes
+q {
+    quotes: "\2018" "\2019" "#{$open-quote}" "#{$close-quote}";
+
+    &:before {
+        content: "\2018";
+    }
+
+    &:after {
+        content: "\2019";
+    }
+
+    q:before {
+        content: "\201C";
+    }
+
+    q:after {
+        content: "\201D";
+    }
+}
+
+// Block Quotes
+blockquote {
+    margin: 0;
+    padding-left: rem($base-spacing-unit);
+    border-left: rem(4) solid $brand-blue;
+    font-size: rem($h2-size);
+    word-break: break-word;
+
+    // quotes: "#{$open-quote}" "#{$close-quote}";
+    //.4em is roughly equal to the width of the opening “ that we wish to hang.
+    // text-indent: -.41em;
+
+    // p:before {
+    //   content: "#{$open-quote}";
+    // }
+
+    // p:after {
+    //   content: "";
+    // }
+
+    // p:last-of-type {
+    //   margin-bottom: 0;
+    // }
+
+    // p:last-of-type:after {
+    //   content: "#{$close-quote}";
+    // }
+
+    q:before {
+      content: "\2018";
+    }
+
+    q:after {
+      content: "\2019";
+    }
+}

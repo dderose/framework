@@ -1,0 +1,189 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base stuff
+ */
+// $base-font-size:    2!default;
+// $base-line-height:  3!default;
+$base-font-size:    16!default;
+$base-line-height:  24!default;
+
+/**
+ * Base font-families
+ */
+$base-font-family:  ProximaNova-Regular, Georgia!default;
+$headline-font-family: LubalinGraphStd-Book!default;
+$bold-headline-font-family: LubalinGraphStd-Demi !default;
+$secondary-headline-font-family: ProximaNova-Semibold!default;
+$light-font-family: ProximaNova-Light!default;
+
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+$breakpoint1:   481px!default;
+$breakpoint2:   600px!default;
+$breakpoint3:   769px!default;
+$breakpoint4:   1000px!default;
+$breakpoint5:   1450px!default;
+
+
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+// $giga-size:         $base-font-size * 3 !default;
+// $mega-size:         $base-font-size * 2 !default;
+// $kilo-size:         $base-font-size * 1.75 !default;
+
+// $h1-size:           $base-font-size * 1.5 !default; // .alpha
+// $h2-size:           $base-font-size * 1.33 !default; // .beta
+// $h3-size:           $base-font-size * 1.16 !default; // .gamma
+// $h4-size:           $base-font-size !default; // .delta
+// $h5-size:           $base-font-size * .95 !default; // .epsilon
+// $h6-size:           $base-font-size * .9 !default; // .zeta
+
+// $centi-size:        $base-font-size * .95 !default;
+// $milli-size:        $base-font-size * .9 !default;
+// $micro-size:        $base-font-size * .85 !default;
+
+
+$centi-size:        14.7!default;
+$milli-size:        13.3!default;
+
+$tera-size:         112!default;
+$giga-size:         56!default;
+$mega-size:         45!default;
+$kilo-size:         34!default;
+
+$h1-size:           23!default; // .alpha
+$h2-size:           19!default; // .beta
+$h3-size:           15!default; // .gamma
+$h4-size:           13!default; // .delta
+$h5-size:           11!default; // .epsilon
+$h6-size:           9!default; // .zeta
+
+$micro-size:        11!default;
+
+
+/*------------------------------------*\
+    $FONT-COLORS
+\*------------------------------------*/
+/**
+ * Font-colors (in hex). Refer to relevant sections for their implementations.
+ */
+$base-font-color:     #4d4d4d!default; // Default font color
+$medium-font-color:   #767676!default; // 
+$light-font-color:    #bcbcbc!default; // 
+$link-color:          #000000!default; //
+$visited-link-color:  #232323!default; //
+
+
+// BRAND COLORS
+$brand-blue: #5F86D1!default;
+$brand-green: #33CC8C!default;
+
+//$colorPrimary1:     #f05a28!default;
+$colorPrimary1: $brand-green;
+//$colorPrimary2:     #35388f!default;
+$colorPrimary2: #000000;
+//$colorSecondary1:   #928ec5!default;
+$colorSecondary1: $brand-blue;
+$colorSecondary2:   #b7b7d8!default;
+
+
+// BACKGROUND COLORS
+$bgColorLight:      #f1f3f7!default;
+$bgColorMedium:     #D4D5D9!default;
+$bgColorDark:       #4d4d4d!default;
+
+/*------------------------------------*\
+    $BUTTON COLLORS AND ATTRIBUTES
+\*------------------------------------*/
+/**
+ * Button-colors (in hex). Refer to relevant sections for their implementations.
+ */
+// $btnColor:                  #ebedee!default;
+// $btnColorHover:             #d7dadd!default;
+// $btnColorActive:            $color6!default;
+// $btnTxtColor:               $color3!default;
+// $btnTxtColorActive:         $color2!default;
+
+// $btnColorDisabled:          #ebedee!default;
+// $btnTxtColorDisabled:       $color6!default;
+
+/*------------------------------------*\
+    $BORDER COLLORS
+\*------------------------------------*/
+/**
+ * Button-colors (in hex). Refer to relevant sections for their implementations.
+ */
+$brdrColor: #dadada!default;
+$brdrColorDark: #b0b6bb!default;
+
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+$english-quotes:    true!default;
+
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+$open-quote:    null;
+$close-quote:   null;
+
+@if $english-quotes == true {
+    $open-quote:    \201C;
+    $close-quote:   \201D;
+}
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+@if $english-quotes != true {
+    $open-quote:    \00AB;
+    $close-quote:   \00BB;
+}
+
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+$brand-face:        $base-font-family!default;
+
+/**
+ * How big would you like round corners to be by default?
+ */
+$brand-round:        3!default;
+
+ /**
+ * The default transition (buttons, links, etc.)
+ */
+$brand-transition:        all .2s cubic-bezier(1, 0, .5, 1)!default;
+
+
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+// $base-spacing-unit: 1.25rem!default;
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$one-and-half-spacing-unit: $base-line-height * 1.5!default;
+$double-spacing-unit: $base-spacing-unit * 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+// $line-height-ratio: 1.5;

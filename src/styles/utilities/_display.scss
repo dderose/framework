@@ -1,0 +1,155 @@
+/* Create breakpoint utility classes for showing and hiding elements */
+@mixin display-setup($namespace: "") {
+	.#{$namespace}u-inline {
+	    display: inline !important;
+	}
+
+	.#{$namespace}u-inlineBlock {
+	    display: inline-block !important;
+	}
+
+	.#{$namespace}u-block {
+	    display: block !important;
+	}
+
+	.#{$namespace}u-flex {
+	    display: -webkit-flex !important;
+	    display: flex !important;
+	}
+
+	.#{$namespace}u-table {
+	    display: table !important;
+	    width: 100% !important;
+	}
+
+	.#{$namespace}u-tableFixed {
+	    table-layout: fixed !important;
+	}
+
+	.#{$namespace}u-tableInline {
+	    display: inline-table !important;
+	}
+
+	.#{$namespace}u-tableRow {
+	    display: table-row !important;
+	}
+
+	.#{$namespace}u-tableCell {
+	    display: table-cell !important;
+	}
+
+	.#{$namespace}u-tableCellCollapse {
+	    display: table-cell !important;
+	    width: rem(1);
+	}
+
+	.#{$namespace}u-hide,
+	.#{$namespace}u-displayNone {
+		display: none !important;
+	}
+
+	.#{$namespace}u-visuallyHidden {
+		@extend %visuallyHidden;
+	}
+
+	.#{$namespace}u-show {
+		display: block !important;
+	}
+
+	.#{$namespace}u-showInlineBlock {
+		display: inline-block !important;
+	}
+
+	.#{$namespace}u-showTable {
+		display: table !important;
+	}
+
+	.#{$namespace}u-showTableCell {
+		display: table-cell !important;
+	}
+
+  	// TODO: Figure out a better way of handling such thing
+  	.#{$namespace}u-showOnlyFirstChild {
+	  > div {
+		display: none;
+		&:first-child {
+		  display: block;
+		}
+	  }
+	}
+}
+
+@include display-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include display-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include display-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include display-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include display-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include display-setup("b5-");
+}
+
+// max
+
+ @media only screen and (max-width:$breakpoint1) {
+     @include display-setup("b1Max-");
+ }
+
+ @media only screen and (max-width:$breakpoint2) {
+     @include display-setup("b2Max-");
+ }
+
+ @media only screen and (max-width:$breakpoint3) {
+     @include display-setup("b3Max-");
+ }
+
+ @media only screen and (max-width:$breakpoint4) {
+     @include display-setup("b4Max-");
+ }
+
+ @media only screen and (max-width:$breakpoint5) {
+     @include display-setup("b5Max-");
+ }
+
+
+// @mixin scroll-setup($namespace: "") {
+// 	.#{$namespace}u-disableScroll {
+// 		height: 100%;
+// 		position: fixed;
+//         overflow: hidden;
+// 	}
+// }
+
+// @include scroll-setup();
+
+// @media only screen and (max-width:$breakpoint1) {
+//     @include scroll-setup("b1Max-");
+// }
+
+// @media only screen and (max-width:$breakpoint2) {
+//     @include scroll-setup("b2Max-");
+// }
+
+// @media only screen and (max-width:$breakpoint3) {
+//     @include scroll-setup("b3Max-");
+// }
+
+// @media only screen and (max-width:$breakpoint4) {
+//     @include scroll-setup("b4Max-");
+// }
+
+// @media only screen and (max-width:$breakpoint5) {
+//     @include scroll-setup("b5Max-");
+// }

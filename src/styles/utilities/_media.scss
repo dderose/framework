@@ -1,0 +1,28 @@
+/* Create breakpoint utility classes for showing and hiding elements */
+@mixin media-setup($namespace: "") {
+	.#{$namespace}u-animated {
+        transition: all .4s cubic-bezier(1, 0, .5, 1);
+	}
+}
+
+@include media-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include media-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include media-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include media-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include media-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include media-setup("b5-");
+}

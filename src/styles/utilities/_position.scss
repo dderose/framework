@@ -1,0 +1,40 @@
+/* Create breakpoint utility classes for showing and hiding elements */
+@mixin position-setup($namespace: "") {
+	.#{$namespace}u-static {
+	    position: static !important;
+	}
+
+	.#{$namespace}u-relative {
+	    position: relative !important;
+	}
+
+	.#{$namespace}u-absolute {
+	    position: absolute !important;
+	}
+
+	.#{$namespace}u-fixed {
+	    position: fixed !important;
+	}
+}
+
+@include position-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include position-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include position-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include position-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include position-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include position-setup("b5-");
+}

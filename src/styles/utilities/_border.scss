@@ -1,0 +1,72 @@
+// Borders
+//
+// These utility classes allow us to add borders on any or all sides of an element, change the border style, border thickness, and border color. Additionally, we can add a standard border radius.
+// 
+// <div class="u-padding u-marginBottom u-border">u-border</div>
+// <div class="u-padding u-marginBottom u-borderTop">u-borderTop</div>
+// <div class="u-padding u-marginBottom u-borderRight">u-borderRight</div>
+// <div class="u-padding u-marginBottom u-borderBottom">u-borderBottom</div>
+// <div class="u-padding u-marginBottom u-borderLeft">u-borderLeft</div>
+// <div class="u-padding u-marginBottom u-borderSides">u-borderSides</div>
+// <div class="u-padding u-marginBottom u-borderEnds">u-borderEnds</div>
+// <div class="u-padding u-marginBottom u-border u-borderDashed">u-borderDashed</div>
+// <div class="u-padding u-marginBottom u-border u-borderDotted">u-borderDotted</div>
+// <div class="u-padding u-marginBottom u-border u-borderThick">u-borderThick</div>
+// <div class="u-padding u-marginBottom u-border u-borderDark">u-borderDark</div>
+// <div class="u-padding u-marginBottom u-border u-borderRounded">u-borderRounded</div>
+// <div class="u-padding u-marginBottom u-border u-borderRoundedTop">u-borderRoundedTop</div>
+// <div class="u-padding u-marginBottom u-border u-borderRoundedBottom">u-borderRoundedBottom</div>
+// <div class="u-padding u-marginBottom u-border u-borderRoundedLeft">u-borderRoundedLeft</div>
+// <div class="u-padding u-marginBottom u-border u-borderRoundedRight">u-borderRoundedRight</div>
+// 
+// Styleguide 2.3.0
+
+@mixin border-setup($namespace: "") {
+	.#{$namespace}u-border       { border: 1px solid $brdrColor !important; }
+	.#{$namespace}u-borderTop    { border-top: 1px solid $brdrColor !important; }
+	.#{$namespace}u-borderRight  { border-right: 1px solid $brdrColor !important; }
+	.#{$namespace}u-borderBottom { border-bottom: 1px solid $brdrColor !important; }
+	.#{$namespace}u-borderLeft   { border-left: 1px solid $brdrColor !important; }
+	.#{$namespace}u-borderSides  { border-right: 1px solid $brdrColor !important; border-left: 1px solid $brdrColor !important; }
+	.#{$namespace}u-borderEnds   { border-top: 1px solid $brdrColor !important; border-bottom: 1px solid $brdrColor !important; }
+
+	.#{$namespace}u-borderSolid  { border-style: solid !important; }
+	.#{$namespace}u-borderDashed { border-style: dashed !important; }
+	.#{$namespace}u-borderDotted { border-style: dotted !important; }
+
+	.#{$namespace}u-borderThick  { border-width: 2px !important; }
+
+	.#{$namespace}u-borderDark   { border-color: $brdrColorDark !important; }
+
+	.#{$namespace}u-borderRounded   { border-radius: rem($brand-round) !important; }
+	.#{$namespace}u-borderRoundedTop   { border-radius: rem($brand-round) rem($brand-round) 0 0 !important; }
+	.#{$namespace}u-borderRoundedBottom   { border-radius: 0 0 rem($brand-round) rem($brand-round) !important; }
+	.#{$namespace}u-borderRoundedLeft   { border-radius: rem($brand-round) 0 0 rem($brand-round) !important; }
+	.#{$namespace}u-borderRoundedRight   { border-radius: 0 rem($brand-round) rem($brand-round) 0 !important; }
+
+	.#{$namespace}u-borderNone {
+		border: 0 !important;
+	}
+}
+
+@include border-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include border-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include border-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include border-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include border-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include border-setup("b5-");
+}

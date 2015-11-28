@@ -1,0 +1,12 @@
+.u-imageRounded {
+    border-radius: 50%;
+}
+
+.u-thumbnail {
+	max-width: 100%;
+	height: auto;
+	padding: rem($half-spacing-unit);
+	background-color: #fff;
+	border: 2px solid $brdrColor;
+	border-radius: rem($brand-round);
+}

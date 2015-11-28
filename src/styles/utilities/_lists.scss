@@ -1,0 +1,57 @@
+.u-listHeading {
+	margin-bottom: rem($half-spacing-unit) !important;
+	padding-bottom: rem(4) !important;
+	font-size: rem($h3-size);
+	font-weight: 500 !important;
+	border-bottom: 1px solid $brdrColorDark !important;
+}
+
+/* Create breakpoint utility classes */
+@mixin list-setup($namespace: "") {
+	.#{$namespace}u-listHorizontal {
+		margin: 0 !important;
+		padding: 0 !important;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0 rem($half-spacing-unit) 0 0 !important;
+			line-height: 1 !important;
+
+			@include rwd-b3() {
+				padding: 0 rem($base-spacing-unit * .75) 0 0 !important;
+			}
+		}
+	}
+
+	.#{$namespace}u-listPlain {
+	    list-style-type: none !important;
+
+		li {
+			padding-left: 0 !important;
+			margin-left: 0 !important;
+		}
+	}
+}
+
+@include list-setup();
+
+@media only screen and (min-width:$breakpoint1) {
+    @include list-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include list-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include list-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include list-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include list-setup("b5-");
+}

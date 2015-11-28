@@ -1,0 +1,35 @@
+{
+  "name": "Framework",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Dan DeRose",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-file-cache": "0.0.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-kss": "0.0.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-scss-lint": "^0.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-svgmin": "^1.2.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
+    "jshint-stylish": "^2.0.1",
+    "node-sass": "^3.3.3",
+    "require-dir": "^0.3.0",
+    "uglify": "^0.1.5"
+  },
+  "scripts": {
+    "dev": "gulp --type dev",
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "dependencies": {}
+}

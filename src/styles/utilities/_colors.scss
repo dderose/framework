@@ -1,0 +1,17 @@
+.u-colorWhite       { color: rgba(255, 255, 255, .87)  !important; }
+.u-colorBlack       { color: #000000  !important; }
+.u-colorBase        { color: $base-font-color  !important; }
+.u-colorMedium      { color: $medium-font-color  !important; }
+.u-colorLight       { color: $light-font-color  !important; }
+.u-colorLink        { color: $link-color  !important; }
+.u-colorAccent      { color: $colorSecondary1  !important; }
+.u-colorAccent2     { color: $colorSecondary2  !important; }
+.u-colorBrandBlue   { color: $brand-blue !important; }
+.u-colorBrandGreen  { color: $brand-green !important; }
+
+.u-bgColorPrimary   { background-color: $colorPrimary1 !important;}
+.u-bgColorPrimary2  { background-color: $colorPrimary2 !important;}
+.u-bgColorSecondary { background-color: $colorSecondary1 !important;}
+.u-bgColorWhite     { background-color: #ffffff !important;}
+.u-bgColorLightGray { background-color: #ddd !important; }
+.u-bgColorDark     { background-color: #4d4d4d !important;}

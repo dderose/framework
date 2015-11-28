@@ -1,0 +1,179 @@
+@mixin width-setup($namespace: "") {
+     // Make an element fill the remaining space.
+    .#{$namespace}u-sizeFill {
+        display: block !important;
+        overflow: hidden !important;
+        width: auto !important;
+    }
+
+    .#{$namespace}u-sizeFillAlt {
+        display: table-cell !important;
+        width: rem(10000);
+        vertical-align: top;
+    }
+
+     // Make an element the width of its parent.
+    .#{$namespace}u-sizeFull {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .#{$namespace}u-widthAuto {
+        width: auto !important;
+    }
+
+    .#{$namespace}u-size1of10 {
+        width: 10% !important;
+    }
+
+    .#{$namespace}u-size1of8 {
+        width: 12.5% !important;
+    }
+
+    .#{$namespace}u-size1of6 {
+        width: 16.667% !important;
+    }
+
+    .#{$namespace}u-size1of5 {
+        width: 20% !important;
+    }
+
+    .#{$namespace}u-size1of4 {
+        width: 25% !important;
+    }
+
+    .#{$namespace}u-size3of10 {
+        width: 30% !important;
+    }
+
+    .#{$namespace}u-size1of3 {
+        width: 33.333% !important;
+    }
+
+    .#{$namespace}u-size3of8 {
+        width: 37.5% !important;
+    }
+
+    .#{$namespace}u-size2of5 {
+        width: 40% !important;
+    }
+
+    .#{$namespace}u-size5of12 {
+        width: 41.667% !important;
+    }
+
+    .#{$namespace}u-size1of2 {
+        width: 50% !important;
+    }
+
+    .#{$namespace}u-size7of12 {
+        width: 58.333% !important;
+    }
+
+    .#{$namespace}u-size3of5 {
+        width: 60% !important;
+    }
+
+    .#{$namespace}u-size5of8 {
+        width: 62.5% !important;
+    }
+
+    .#{$namespace}u-size2of3 {
+        width: 66.667% !important;
+    }
+
+    .#{$namespace}u-size7of10 {
+        width: 70% !important;
+    }
+
+    .#{$namespace}u-size3of4 {
+        width: 75% !important;
+    }
+
+    .#{$namespace}u-size4of5 {
+        width: 80% !important;
+    }
+
+    .#{$namespace}u-size5of6 {
+        width: 83.333% !important;
+    }
+
+    .#{$namespace}u-size7of8 {
+        width: 87.5% !important;
+    }
+
+    .#{$namespace}u-size9of10 {
+        width: 90% !important;
+    }
+
+    .#{$namespace}u-maxWidthSmall {
+        max-width: rem(768);
+    }
+
+    .#{$namespace}u-maxWidthBase {
+        max-width: rem(1000);
+    }
+
+    .#{$namespace}u-maxWidthWide {
+        max-width: rem(1600);
+    }
+    
+    .#{$namespace}u-noDimensions {
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+}
+
+@include width-setup();
+
+ // You can define at which breakpoint you’d like an element to be a certain size, e.g.:
+ //
+ // `<div class="Grid-item b1-u-size1of2 b2-u-size1of2 b3-u-size1of4"> ... </div>`
+ //
+ // Since we are using a mobile first approach we use the base class for small screens and work our way up. The above example would be 100% below a width 481px, 50% from 481px - 1000px, and 25% over 1000px.
+
+@media only screen and (min-width:$breakpoint1) {
+    @include width-setup("b1-");
+}
+
+@media only screen and (min-width:$breakpoint2) {
+    @include width-setup("b2-");
+}
+
+@media only screen and (min-width:$breakpoint3) {
+    @include width-setup("b3-");
+}
+
+@media only screen and (min-width:$breakpoint4) {
+    @include width-setup("b4-");
+}
+
+@media only screen and (min-width:$breakpoint5) {
+    @include width-setup("b5-");
+}
+
+// TODO: These add a bunch of weight to the final css file which is why I didn't just give everything all possible breakpoint classes. Only add these if you need them.
+// max
+
+@media only screen and (max-width:$breakpoint1) {
+    @include width-setup("b1Max-");
+}
+
+@media only screen and (max-width:$breakpoint2) {
+    @include width-setup("b2Max-");
+}
+
+@media only screen and (max-width:$breakpoint3) {
+    @include width-setup("b3Max-");
+}
+
+@media only screen and (max-width:$breakpoint4) {
+    @include width-setup("b4Max-");
+}
+
+@media only screen and (max-width:$breakpoint5) {
+    @include width-setup("b5Max-");
+}
